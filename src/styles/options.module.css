@@ -1,0 +1,46 @@
+.container {
+   display: flex;
+   flex-direction: row;
+   gap: 1.5rem;
+   margin-top: 2rem;
+}
+
+.options {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.2rem;
+   max-width: 100%;
+   scrollbar-width: thin;
+   scrollbar-color: var(--dark-background) var(--dark-grey);
+}
+@media (min-width: 768px) {
+   .options::-webkit-scrollbar {
+      height: 1.5rem;
+   }
+}
+.options::-webkit-scrollbar-track {
+   background-color: var(--dark-grey);
+}
+.options::-webkit-scrollbar-thumb {
+   background-color: #808080;
+   background-clip: padding-box;
+   border-radius: 5px;
+}
+.options::-webkit-scrollbar-thumb:hover {
+   background-color: var(--lightGrey);
+}
+
+.options--much-elements {
+   flex-direction: row;
+   overflow-y: auto;
+   max-height: 16rem;
+}
+.options--few-elements {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+   grid-gap: 10px;
+}
+.options--three-elements {
+   flex-direction: column;
+   min-width: 25%;
+}

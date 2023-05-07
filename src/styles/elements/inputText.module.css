@@ -1,0 +1,79 @@
+.form {
+   --timing: 0.3s;
+   --width-of-input: 200px;
+   --height-of-input: 40px;
+   --border-height: 2px;
+   --input-bg: #2b2b2b;
+   --border-radius: 8px;
+   --after-border-radius: 1px;
+   position: relative;
+   width: var(--width-of-input);
+   height: var(--height-of-input);
+   display: flex;
+   align-items: center;
+   padding-inline: 0.8em;
+   border: 1px solid var(--lightGrey);
+   border-radius: var(--border-radius);
+   transition: border-radius 0.5s ease;
+   background: var(--input-bg,#fff);
+}
+
+.form:before {
+   content: "";
+   position: absolute;
+   background: var(--lightBlue);
+   transform: scaleX(0);
+   transform-origin: center;
+   width: 100%;
+   height: var(--border-height);
+   left: 0;
+   bottom: -1px;
+   border-radius: 1px;
+   transition: transform var(--timing) ease;
+}
+.form:focus-within {
+   border-radius: var(--after-border-radius);
+}
+ .form:focus-within:before {
+   transform: scale(1);
+}
+
+.input {
+   background-color: transparent;
+   width: 100%;
+   height: 100%;
+   padding: 1rem 0;
+   border: none;
+}
+.input:hover {
+   border: none;
+}
+.input:focus {
+   border: none;
+   outline: none;
+}
+.input:not(:placeholder-shown) ~ .reset {
+   opacity: 1;
+   visibility: visible;
+}
+
+.reset {
+   border: none;
+   background: none;
+   border: none;
+   background: none;
+   opacity: 0;
+   visibility: hidden;
+}
+.reset:hover {
+   border: none;
+   background: none;
+}
+.reset svg {
+   color: var(--lightGrey);
+   width: 19px;
+   margin-top: 4px;
+}
+.reset:hover > svg {
+   color: var(--lightBlue);
+}
